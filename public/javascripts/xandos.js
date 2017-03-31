@@ -16,6 +16,7 @@ socket.on('state', function (data) {
   if(data.xostate && data.xostate != state){
     state = data.xostate;
     update();
+    showState();
   }
 });
 function sendState(){
