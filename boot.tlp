@@ -3,8 +3,8 @@ runcmd:
     # Install git
     - 'yum install -y git node'
 
-    # Start Docker
-    - 'service docker start'
+    - 'curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -'
+    - 'yum -y install nodejs'
 
     # Get, build and run container
     - 'mkdir -p /root/techConnectCodeWar'

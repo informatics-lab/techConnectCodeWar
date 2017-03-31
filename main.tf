@@ -15,4 +15,25 @@ resource "aws_instance" "techconnectgames" {
   tags {
     Name = "tech-connect-games"
   }
+  security_groups        = ["default", "${aws_security_group.security_techconnectgames.name}"]
+}
+
+
+resource "aws_security_group" "security_techconnectgames" {
+  name = "security_techconnectgames"
+  description = "Allow web traffic to techconnectgames"
+
+  ingress {
+      from_port = 3000
+      to_port = 3000
+      protocol = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+      from_port = 0
+      to_port = 0
+      protocol = "-1"
+      cidr_blocks = ["0.0.0.0/0"]
+  }
 }
