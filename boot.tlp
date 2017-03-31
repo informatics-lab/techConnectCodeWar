@@ -7,8 +7,8 @@ runcmd:
     - 'service docker start'
 
     # Get, build and run container
-    - 'mkdir -p /root/'
-    - 'git clone https://github.com/tam203/sparkline.git /root/sparkline'
-    - 'cd /root/sparkline'
-    - 'docker build -t weather_sparkline_bot .'
-    - 'docker run -dt -e DATAPOINT_KEY=${DATAPOINT_KEY} -e TWITTER_C_TOKEN=${WEATHERSPARK_C_TOKEN} -e TWITTER_C_SECRET=${WEATHERSPARK_C_SECRET} -e TWITTER_A_TOKEN=${WEATHERSPARK_A_TOKEN} -e TWITTER_A_SECRET=${WEATHERSPARK_A_SECRET} --restart=unless-stopped weather_sparkline_bot'
+    - 'mkdir -p /root/techConnectCodeWar'
+    - 'git clone https://github.com/met-office-lab/techConnectCodeWar /root/techConnectCodeWar'
+    - 'cd /root/techConnectCodeWar'
+    - 'npm install'
+    - 'npm run start'
