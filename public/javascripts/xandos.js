@@ -13,8 +13,8 @@ var state = NONE.repeat(9);
 var socket = io.connect(location.protocol + '//' + location.host);
 socket.on('state', function (data) {
   console.log('got state ', data);
-  if(data.state && data.xostate != state){
-    state = data.state;
+  if(data.xostate && data.xostate != state){
+    state = data.xostate;
     update();
   }
 });
