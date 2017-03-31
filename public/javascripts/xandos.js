@@ -52,7 +52,7 @@ function makeMove(move, player){
   if(state[index] !== NONE){
     throw {msg:'Illegal Move', 'move':move};
   }
-  state = (state.substr(0, index) + player + state.substr(index)).substr(0,9);
+  state = state.substr(0, index) + player + state.substr(index + 1);
   showState();
   update();
   sendState();
@@ -66,7 +66,10 @@ function update(){
     let ele = document.getElementById(id);
     if (state[i] != NONE){
       ele.innerHTML = (state[i] == X)? ximg : oimg;
+    } else {
+      ele.innerHTML = '';
     }
+
   }
 }
 
