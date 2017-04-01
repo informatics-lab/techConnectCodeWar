@@ -1,0 +1,28 @@
+.cell .ref {
+  color: #BBB;
+  position: absolute;
+}
+
+.cell {
+  background: #EEE;
+  border-top: dashed 0.1em #555;
+  border-right: dashed 0.1em #555;
+}
+
+.cell .cell-state{
+  font-size: 150%;
+  padding: 5%;
+}
+
+p.state {
+  font-size: 200%
+}
+
+#state-code {
+  font-family: monospace;
+  color: #444;
+}
+
+#update, #controls {
+  display : none;
+}

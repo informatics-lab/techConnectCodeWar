@@ -4,30 +4,12 @@ A |_|_|_|
 B |_|_|_|
 C |_|_|_|
 */
-
+gametype = 'xandos' // declared in game.js
 const X = 'X';
 const Y = 'Y';
 const NONE = '-';
 var state = NONE.repeat(9);
-// socket
-var socket = io.connect(location.protocol + '//' + location.host);
-socket.on('state', function (data) {
-  console.log('got state ', data);
-  if(data.xostate && data.xostate != state){
-    state = data.xostate;
-    update();
-    showState();
-  }
-});
-function sendState(){
-  console.log('send state ', state);
-  socket.emit('stateUpdate', { xostate: state });
-}
 
-
-function showState(){
-  document.getElementById('state-code').innerHTML = state;
-}
 
 function cellNumToRef(i){
   let col = (i % 3)
@@ -110,10 +92,6 @@ function scaleCellsVertically(){
     let cell = cells[i];
     cell.style.height = cell.clientWidth + 'px';
   }
-}
-
-function showControls(){
-  document.getElementById('controls').style.display = 'block'
 }
 
 

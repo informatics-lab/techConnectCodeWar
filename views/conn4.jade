@@ -6,14 +6,14 @@ block styles
 
 block content
   h1= title
-  p Let's play X's and O's
+  p Let's play Connect 4
 
   div.container
     div.row
       div.col-md-6.div.col-sm-12.col-lg-4
         form#controls.control
           input#player.form-control(type="text", placeholder="player (X or O)")
-          input#move.form-control(type="text", placeholder="Move e.g 1,A")
+          input#move.form-control(type="text", placeholder="Column i.e 0 to 6")
           input#submit.form-control(type="submit", value="Make the move")
         p.state state:
         pre#state-code
@@ -24,4 +24,4 @@ block content
 block scripts
   script(src='/socket.io/socket.io.js')
   script(src='/javascripts/game.js')
-  script(src='/javascripts/xandos.js')
+  script(src='/javascripts/conn4.js')
