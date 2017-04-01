@@ -1,5 +1,6 @@
 .cell .ref {
-  color: #DDD;
+  color: #BBB;
+  position: absolute;
 }
 
 .cell {
@@ -10,6 +11,7 @@
 
 .cell .cell-state{
   font-size: 150%;
+  padding: 5%;
 }
 
 p.state {
@@ -21,6 +23,6 @@ p.state {
   color: #444;
 }
 
-#controls {
+#update, #controls {
   display : none;
 }
