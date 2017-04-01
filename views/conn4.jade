@@ -1,0 +1,25 @@
+extends layout
+
+block styles
+  link(rel='stylesheet', href='/stylesheets/conn4.css')
+  link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+
+block content
+  h1= title
+  p Let's play X's and O's
+
+  div.container
+    div.row
+      div.col-md-6.div.col-sm-12.col-lg-4
+        form#controls.control
+          input#player.form-control(type="text", placeholder="player (X or O)")
+          input#move.form-control(type="text", placeholder="Move e.g 1,A")
+          input#submit.form-control(type="submit", value="Make the move")
+        p.state state:
+        pre#state-code
+      div.col-md-6.col-sm-12.col-lg-8
+        div#game.container-fluid
+
+block scripts
+  script(src='/socket.io/socket.io.js')
+  script(src='/javascripts/conn4.js')
