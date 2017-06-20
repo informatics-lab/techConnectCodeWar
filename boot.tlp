@@ -1,14 +1,15 @@
 #cloud-config
 runcmd:
     # Install git
-    - 'yum install -y git node'
+    - 'yum update -y'
 
-    - 'curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -'
-    - 'yum -y install nodejs'
+    # Install docker
+    - 'yum -y install docker'
+    - 'service docker start'
 
     # Get, build and run container
     - 'mkdir -p /root/techConnectCodeWar'
     - 'git clone https://github.com/met-office-lab/techConnectCodeWar /root/techConnectCodeWar'
     - 'cd /root/techConnectCodeWar'
-    - 'npm install'
-    - 'npm run start'
+    - 'docker build -t war .'
+    - 'docker run -p 3000:3000 war'
