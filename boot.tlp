@@ -2,6 +2,7 @@
 runcmd:
     # Install git
     - 'yum update -y'
+    - 'yum install -y git'
 
     # Install docker
     - 'yum -y install docker'
@@ -12,4 +13,4 @@ runcmd:
     - 'git clone https://github.com/met-office-lab/techConnectCodeWar /root/techConnectCodeWar'
     - 'cd /root/techConnectCodeWar'
     - 'docker build -t war .'
-    - 'docker run -p 3000:3000 war'
+    - 'docker run --restart always -p 3000:3000 war'
