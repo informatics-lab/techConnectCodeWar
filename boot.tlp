@@ -6,6 +6,7 @@ runcmd:
 
     # Install docker
     - 'yum -y install docker'
+    - 'service docker start'
 
     # Get, build and run container
     - 'mkdir -p /root/techConnectCodeWar'
