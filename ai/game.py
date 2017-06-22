@@ -8,7 +8,20 @@ def __api(path, method=None):
 
 
 def state():
-    return __api('state')
+    data = []
+    data = __api('state').splitlines()
+    for i, row in enumerate(data):
+        data[i] = row.strip()
+    return data
+
+
+def print_state():
+    data = []
+    data = __api('state').splitlines()
+    for i, row in enumerate(data):
+        data[i] = row.strip()
+        print(data[i])
+    return None
 
 def play(player, col):
     player = player.lower()
@@ -19,7 +32,6 @@ def play(player, col):
 
 def restart():
     return __api('reset', method='PUT')
-
 
 if __name__ == "__main__":
     print(restart())
