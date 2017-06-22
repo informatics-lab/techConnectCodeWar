@@ -14,7 +14,6 @@ def state():
         data[i] = row.strip()
     return data
 
-
 def print_state():
     data = []
     data = __api('state').splitlines()
