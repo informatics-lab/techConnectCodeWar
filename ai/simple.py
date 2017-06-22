@@ -1,14 +1,13 @@
 import game
 import random
+from random_player import Player
 
-PLAYER = 'X'
+px = Player('x')
+po = Player('o')
 
-def getMove():
-    return random.randint(0,4);
-
-
-
-print(game.restart())
-print(game.state())
-game.play(PLAYER, getMove())
-print(game.state())
+game.restart()
+for i in range(200):
+    print(game.state())
+    px.play()
+    print(game.state())
+    po.play()
