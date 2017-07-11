@@ -13,7 +13,9 @@ resource "aws_instance" "techconnectgames" {
   key_name              = "gateway"
   user_data             = "${data.template_file.bootstrap.rendered}"
   tags {
-    Name = "tech-connect-games"
+    Name = "tech-connect-games",
+    EndOfLife = "2017-06-10",
+    Owner = "theo.mccaie"
   }
   security_groups        = ["default", "${aws_security_group.security_techconnectgames.name}"]
 }

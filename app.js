@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 var http = require('http');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var xandos = require('./routes/xandos');
 var conn4 = require('./routes/conn4');
 var c4State = require('./conn4/state');
@@ -24,7 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/xandos', xandos);
 app.use('/conn4', conn4);
 
