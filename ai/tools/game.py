@@ -2,7 +2,7 @@ from urllib import request
 import json
 
 def __api(path, method=None):
-    base_url = 'http://52.213.11.19:3000/conn4/api/'
+    base_url = 'http://52.30.71.22:3000/conn4/api/'
     response = request.urlopen(request.Request(base_url + path, method=method))
     return json.load(response)
 
@@ -23,8 +23,8 @@ def print_state():
     return None
 
 def play(player, col):
-    player = player.lower()
-    assert player == 'x' or player == 'o'
+    player = player.upper()
+    assert player == 'X' or player == 'O'
     assert 0 <= col <= 6
     assert isinstance(col, int)
     return __api('play/' + player + '/' + str(col), method="PUT")
